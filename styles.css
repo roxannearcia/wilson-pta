@@ -401,6 +401,11 @@ footer p {
     align-items: center;
   }
 
+  .form-embed {
+    margin: 0;
+    width: 100%;
+  }
+
   .qr-code {
     padding: 15px;
   }
