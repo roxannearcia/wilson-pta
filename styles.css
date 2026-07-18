@@ -420,13 +420,26 @@ footer p {
 
 /* Small screens up to 425px */
 @media (max-width: 425px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .btn-large {
+    padding: 16px 20px;
+  }
+
   .school-links {
     flex-direction: column;
     align-items: stretch;
   }
 
   .school-links .btn {
-    width: 100%;
     margin-bottom: 10px;
   }
 
