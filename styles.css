@@ -246,16 +246,30 @@ body {
 }
 
 /* Sign-up form */
+#signups {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#signups .container {
+  padding: 0;
+}
+
 .form-and-qr {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: flex-start;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .form-embed {
   flex: 1;
   min-width: 0;
+  margin: 0 -12px;
+}
+
+.form-embed iframe {
+  display: block;
 }
 
 .qr-code {
@@ -374,7 +388,7 @@ footer p {
   }
 
   .section {
-    padding: 30px 12px;
+    padding: 25px 10px;
   }
 
   .section h2 {
