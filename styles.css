@@ -97,7 +97,10 @@ body {
   border-radius: 4px;
 }
 
-/* Hamburger button - hidden on desktop */
+/* Section indicator - hidden on desktop */
+.section-indicator {
+  display: none;
+}
 .hamburger {
   display: none;
   background: none;
@@ -409,6 +412,17 @@ footer p {
     right: 0;
   }
 
+  .section-indicator {
+    display: block;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 15px 60px 15px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   main {
     margin-top: 55px;
   }
@@ -431,8 +445,10 @@ footer p {
     position: fixed;
     right: 15px;
     top: 12px;
-    z-index: 200;
+    z-index: 1000;
     padding: 5px 0;
+    background: var(--green-dark);
+    border-radius: 4px;
   }
 
   .navbar ul {

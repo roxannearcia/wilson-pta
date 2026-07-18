@@ -19,6 +19,7 @@
   </header>
 
   <nav class="navbar">
+    <div class="section-indicator" id="section-indicator">About</div>
     <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -175,6 +176,16 @@
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar a');
     const contactLink = document.querySelector('.navbar a[href="#contact"]');
+    const sectionIndicator = document.getElementById('section-indicator');
+
+    const sectionNames = {
+      about: 'About',
+      membership: 'Membership',
+      calendar: 'Calendar',
+      signups: 'Sign-Ups',
+      officers: 'Officers',
+      contact: 'Contact'
+    };
 
     function highlightNav() {
       const scrollPos = window.scrollY + 100;
@@ -184,6 +195,7 @@
       if (isAtBottom) {
         navLinks.forEach(link => link.classList.remove('active'));
         contactLink.classList.add('active');
+        sectionIndicator.textContent = sectionNames.contact;
         return;
       }
 
@@ -199,6 +211,7 @@
               link.classList.add('active');
             }
           });
+          sectionIndicator.textContent = sectionNames[id] || '';
         }
       });
     }
