@@ -391,8 +391,9 @@ body {
 }
 
 .school-links .btn {
-  flex: 1;
   min-width: 200px;
+  max-width: 300px;
+  flex: 1;
 }
 
 /* Footer */
@@ -417,15 +418,15 @@ footer p {
   text-decoration: underline;
 }
 
-/* Tablet */
-@media (max-width: 1024px) and (min-width: 769px) {
+/* Small screens 425px+ */
+@media (min-width: 425px) {
   .school-links {
-    gap: 15px;
+    flex-wrap: nowrap;
   }
 
   .school-links .btn {
     flex: 1;
-    min-width: 180px;
+    min-width: 0;
   }
 }
 
@@ -557,21 +558,25 @@ footer p {
     align-items: stretch;
   }
 
-  .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .btn-large {
-    padding: 16px 20px;
-  }
-
   .school-links .btn {
     margin-bottom: 10px;
   }
 
   .school-links .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Small screens 425px+ */
+@media (min-width: 425px) {
+  .school-links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .school-links .btn {
+    flex: 1;
+    min-width: 0;
     margin-bottom: 0;
   }
 }
