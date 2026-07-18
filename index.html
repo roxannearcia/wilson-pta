@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wilson Lions PTA | Payson, Utah</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay">
+      <img src="https://cmsv2-assets.apptegy.net/uploads/25443/logo/28256/Wilson_Elementary_Logo.png" alt="Wilson Elementary Logo" class="logo">
+      <h1>Wilson Lions PTA</h1>
+      <p class="tagline">Building Community. Supporting Students. Go Lions!</p>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+      <li><a href="#signups">Sign-Ups</a></li>
+      <li><a href="#officers">Officers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Welcome to Wilson Lions PTA</h2>
+        <p>The Wilson Elementary PTA is dedicated to enriching the educational experience of every student at Wilson Elementary in Payson, Utah. We bring together parents, teachers, and community members to support our school and our children.</p>
+        <p>Join us in making a difference! Whether you volunteer your time, attend events, or become a PTA member, your involvement matters.</p>
+      </div>
+    </section>
+
+    <section id="membership" class="section alt">
+      <div class="container">
+        <h2>Become a PTA Member</h2>
+        <p class="section-intro">Support our school by purchasing a PTA membership through our Givebacks store.</p>
+        <a href="https://www.givebacks.com/causes/wilsonlions/shop" target="_blank" class="btn btn-primary btn-large">Join the PTA</a>
+      </div>
+    </section>
+
+    <section id="calendar" class="section">
+      <div class="container">
+        <h2>School &amp; PTA Calendar</h2>
+        <p class="section-intro">Stay up to date with district-wide events and PTA activities.</p>
+        <div class="calendar-toggles">
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-district" checked onchange="toggleCalendar('district')">
+            <span class="toggle-text">District Calendar</span>
+          </label>
+          <label class="toggle-label">
+            <input type="checkbox" id="toggle-pta" checked onchange="toggleCalendar('pta')">
+            <span class="toggle-text">PTA Calendar</span>
+          </label>
+        </div>
+        <div class="calendar-wrapper">
+          <iframe id="calendar-district" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=bmViby5lZHVfczdsbWlrdWFnaTVpc3UwMGE3MjkwZTk2YnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233f51b5" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+          <iframe id="calendar-pta" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&showPrint=0&src=cGF5c29ubGlvbnNwdGFAZ21haWwuY29t&color=%2333b679" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="signups" class="section alt">
+      <div class="container">
+        <h2>Sign-Ups &amp; Volunteer Opportunities</h2>
+        <p class="section-intro">Share your information with us and we'll let you know about volunteer opportunities throughout the year!</p>
+        <div class="form-and-qr">
+          <div class="form-embed">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5hwPiPEdiR_RZBKxUZtTwy2t7C0LTeAu9U29HWwsZR0yA-g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+          </div>
+          <div class="qr-code">
+            <p><strong>Scan to fill out the form:</strong></p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forms.gle/6fnWhHpmTzZsasLUA" alt="QR Code for PTA Information Form">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="officers" class="section">
+      <div class="container">
+        <h2>PTA Officers</h2>
+        <div class="officers-grid">
+          <div class="officer-card">
+            <div class="officer-icon">&#128100;</div>
+            <h3>President</h3>
+            <p>Roxanne Arcia</p>
+          </div>
+          <div class="officer-card">
+            <div class="officer-icon">&#128221;</div>
+            <h3>Secretary</h3>
+            <p>Ana Valdez</p>
+          </div>
+          <div class="officer-card">
+            <div class="officer-icon">&#128176;</div>
+            <h3>Treasurer</h3>
+            <p>Courtney Morlant</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">&#9993;</div>
+            <h3>PTA Email</h3>
+            <a href="mailto:paysonlionspta@gmail.com">paysonlionspta@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#127968;</div>
+            <h3>School Address</h3>
+            <p>Wilson Elementary<br>590 West 500 South<br>Payson, UT 84651</p>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128222;</div>
+            <h3>School Phone</h3>
+            <a href="tel:8014656060">(801) 465-6060</a>
+          </div>
+        </div>
+        <div class="school-links">
+          <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank" class="btn btn-secondary">Wilson Elementary Website</a>
+          <a href="https://www.nebo.edu" target="_blank" class="btn btn-secondary">Nebo School District</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Wilson Lions PTA | Payson, Utah</p>
+      <p class="footer-links">
+        <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank">Wilson Elementary</a> |
+        <a href="mailto:paysonlionspta@gmail.com">Contact Us</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleCalendar(type) {
+      const checkbox = document.getElementById('toggle-' + type);
+      const iframe = document.getElementById('calendar-' + type);
+      iframe.style.display = checkbox.checked ? 'block' : 'none';
+    }
+
+    // Highlight active nav link based on scroll position
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar a');
+    const contactLink = document.querySelector('.navbar a[href="#contact"]');
+
+    function highlightNav() {
+      const scrollPos = window.scrollY + 100;
+      const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100);
+
+      // If near the bottom, highlight contact
+      if (isAtBottom) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        contactLink.classList.add('active');
+        return;
+      }
+
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollPos >= top && scrollPos < top + height) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', highlightNav);
+    highlightNav();
+  </script>
+</body>
+</html>
