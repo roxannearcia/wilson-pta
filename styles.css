@@ -352,6 +352,10 @@ footer p {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero {
+    padding: 50px 15px 40px;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
@@ -365,19 +369,54 @@ footer p {
   }
 
   .navbar a {
-    padding: 6px 12px;
-    font-size: 0.85rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 
   .section {
-    padding: 40px 15px;
+    padding: 30px 12px;
   }
 
   .section h2 {
     font-size: 1.5rem;
+    margin-bottom: 12px;
   }
 
   .form-and-qr {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .qr-code {
+    padding: 15px;
+  }
+
+  .qr-code img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .officers-grid {
+    gap: 15px;
+  }
+
+  .officer-card {
+    padding: 25px 20px;
+  }
+
+  .contact-info {
+    gap: 15px;
+  }
+
+  .contact-item {
+    padding: 25px 20px;
+  }
+
+  .calendar-toggles {
+    gap: 15px;
+  }
+
+  .school-links {
     flex-direction: column;
     align-items: center;
   }
