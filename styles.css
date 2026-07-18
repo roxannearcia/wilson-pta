@@ -224,7 +224,7 @@ body {
   color: var(--gray-dark);
 }
 
-.toggle-label input[type="checkbox"] {
+.toggle-label input[type="radio"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
