@@ -450,10 +450,15 @@ footer p {
     position: relative;
     right: auto;
     top: auto;
+    transform: none;
     z-index: 1000;
-    padding: 5px 0;
+    padding: 10px 0;
     background: none;
     border-radius: 0;
+  }
+
+  .hamburger span {
+    margin: 4px 0;
   }
 
   .navbar ul {
