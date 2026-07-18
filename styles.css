@@ -437,13 +437,12 @@ footer p {
   .school-links {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
 
   .school-links .btn {
-    margin-bottom: 10px;
-  }
-
-  .school-links .btn:last-child {
+    min-width: 0;
+    max-width: none;
     margin-bottom: 0;
   }
 }
