@@ -97,6 +97,38 @@ body {
   border-radius: 4px;
 }
 
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 101;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
 /* Sections */
 .section {
   padding: 60px 20px;
@@ -378,13 +410,32 @@ footer p {
     font-size: 1rem;
   }
 
+  /* Hamburger menu */
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .navbar ul {
-    gap: 2px;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    gap: 0;
+  }
+
+  .navbar ul.open {
+    display: flex;
   }
 
   .navbar a {
-    padding: 6px 10px;
-    font-size: 0.8rem;
+    display: block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 0;
   }
 
   .section {

@@ -19,7 +19,12 @@
   </header>
 
   <nav class="navbar">
-    <ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu">
       <li><a href="#about">About</a></li>
       <li><a href="#membership">Membership</a></li>
       <li><a href="#calendar">Calendar</a></li>
@@ -150,6 +155,21 @@
       const iframe = document.getElementById('calendar-' + type);
       iframe.style.display = checkbox.checked ? 'block' : 'none';
     }
+
+    function toggleMenu() {
+      const menu = document.getElementById('nav-menu');
+      const hamburger = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    }
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+      });
+    });
 
     // Highlight active nav link based on scroll position
     const sections = document.querySelectorAll('section[id]');
