@@ -97,10 +97,18 @@ body {
   border-radius: 4px;
 }
 
-/* Section indicator - hidden on desktop */
-.section-indicator {
+/* Mobile header - hidden on desktop */
+.mobile-header {
   display: none;
 }
+
+.section-indicator {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Hamburger button - hidden on desktop */
 .hamburger {
   display: none;
   background: none;
@@ -412,19 +420,16 @@ footer p {
     right: 0;
   }
 
-  .section-indicator {
-    display: block;
-    color: var(--white);
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 15px 60px 15px 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    min-height: 50px;
   }
 
   main {
-    margin-top: 55px;
+    margin-top: 50px;
   }
 
   .hero {
@@ -442,23 +447,23 @@ footer p {
   /* Hamburger menu */
   .hamburger {
     display: block;
-    position: fixed;
-    right: 15px;
-    top: 12px;
+    position: relative;
+    right: auto;
+    top: auto;
     z-index: 1000;
     padding: 5px 0;
-    background: var(--green-dark);
-    border-radius: 4px;
+    background: none;
+    border-radius: 0;
   }
 
   .navbar ul {
     display: none;
     flex-direction: column;
     width: 100%;
-    padding: 60px 0 10px 0;
+    padding: 0;
     gap: 0;
     position: absolute;
-    top: 100%;
+    top: 50px;
     left: 0;
     background: var(--green-dark);
     box-shadow: var(--shadow);
