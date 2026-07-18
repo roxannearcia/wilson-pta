@@ -389,6 +389,11 @@ body {
   flex-wrap: wrap;
 }
 
+.school-links .btn {
+  flex: 1;
+  min-width: 200px;
+}
+
 /* Footer */
 footer {
   background: var(--green-dark);
