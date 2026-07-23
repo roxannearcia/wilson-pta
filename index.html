@@ -11,17 +11,30 @@
 </head>
 <body>
   <div id="google_translate_element" style="position:fixed;top:10px;right:10px;z-index:1001;">
-    <button onclick="translateToSpanish()" class="translate-btn">Traducir al Español</button>
+    <button onclick="toggleTranslation()" class="translate-btn">Traducir al Español</button>
   </div>
   <style>.goog-te-gadget{display:none !important;}</style>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
+    var isTranslated = false;
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es', autoDisplay: false}, 'google_translate_element');
     }
-    function translateToSpanish() {
+    function toggleTranslation() {
       var sel = document.querySelector('#google_translate_element select');
-      if (sel) { sel.value = 'es'; sel.dispatchEvent(new Event('change')); }
+      var btn = document.querySelector('.translate-btn');
+      if (!sel) return;
+      if (!isTranslated) {
+        sel.value = 'es';
+        sel.dispatchEvent(new Event('change'));
+        btn.textContent = 'Translate to English';
+        isTranslated = true;
+      } else {
+        sel.value = '';
+        sel.dispatchEvent(new Event('change'));
+        btn.textContent = 'Traducir al Español';
+        isTranslated = false;
+      }
     }
   </script>
   <header class="hero">
