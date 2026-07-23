@@ -10,6 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="google_translate_element" style="position:fixed;top:10px;right:10px;z-index:1001;">
+    <button onclick="translateToSpanish()" class="translate-btn">Traducir al Español</button>
+  </div>
+  <style>.goog-te-gadget{display:none !important;}</style>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es', autoDisplay: false}, 'google_translate_element');
+    }
+    function translateToSpanish() {
+      var sel = document.querySelector('#google_translate_element select');
+      if (sel) { sel.value = 'es'; sel.dispatchEvent(new Event('change')); }
+    }
+  </script>
   <header class="hero">
     <div class="hero-overlay">
       <img src="https://cmsv2-assets.apptegy.net/uploads/25443/logo/28256/Wilson_Elementary_Logo.png" alt="Wilson Elementary Logo" class="logo">
