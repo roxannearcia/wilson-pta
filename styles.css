@@ -436,9 +436,20 @@ footer p {
 
 /* Small screens up to 425px */
 @media (max-width: 425px) {
+.translate-wrapper {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+}
+
+  .translate-wrapper {
+    top: auto;
+    bottom: 15px;
+    left: 15px;
+  }
+
   .translate-btn {
-    top: 10px;
-    right: 60px;
     padding: 8px 14px;
     font-size: 0.75rem;
   }
