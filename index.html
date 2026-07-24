@@ -10,49 +10,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="google_translate_element" style="position:fixed;top:10px;right:10px;z-index:1001;">
-    <button onclick="toggleTranslation()" class="translate-btn">Traducir al Español</button>
+  <div class="translate-wrapper">
+    <button onclick="toggleLanguage()" class="translate-btn" id="translate-btn">Traducir al Español</button>
   </div>
-  <style>
-    .goog-te-gadget { display: none !important; }
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0 !important; }
-    .skiptranslate { display: none !important; }
-  </style>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <script>
-    var isTranslated = false;
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'es', autoDisplay: false}, 'google_translate_element');
-    }
-    function toggleTranslation() {
-      var sel = document.querySelector('#google_translate_element select');
-      var btn = document.querySelector('.translate-btn');
-      if (!sel) return;
-      if (!isTranslated) {
-        sel.value = 'es';
-        sel.dispatchEvent(new Event('change'));
-        btn.textContent = 'Translate to English';
-        isTranslated = true;
-      } else {
-        sel.value = '';
-        sel.dispatchEvent(new Event('change'));
-        btn.textContent = 'Traducir al Español';
-        isTranslated = false;
-      }
-    }
-  </script>
+
   <header class="hero">
     <div class="hero-overlay">
       <img src="https://cmsv2-assets.apptegy.net/uploads/25443/logo/28256/Wilson_Elementary_Logo.png" alt="Wilson Elementary Logo" class="logo">
       <h1>Wilson Lions PTA</h1>
-      <p class="tagline">Building Community. Supporting Students. Go Lions!</p>
+      <p class="tagline" data-i18n="tagline">Building Community. Supporting Students. Go Lions!</p>
     </div>
   </header>
 
   <nav class="navbar">
     <div class="mobile-header">
-      <div class="section-indicator" id="section-indicator">About</div>
+      <div class="section-indicator" id="section-indicator" data-i18n="nav_about">About</div>
       <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -60,44 +32,44 @@
       </button>
     </div>
     <ul id="nav-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#membership">Membership</a></li>
-      <li><a href="#calendar">Calendar</a></li>
-      <li><a href="#signups">Sign-Ups</a></li>
-      <li><a href="#officers">Officers</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav_about">About</a></li>
+      <li><a href="#membership" data-i18n="nav_membership">Membership</a></li>
+      <li><a href="#calendar" data-i18n="nav_calendar">Calendar</a></li>
+      <li><a href="#signups" data-i18n="nav_signups">Sign-Ups</a></li>
+      <li><a href="#officers" data-i18n="nav_officers">Officers</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
     </ul>
   </nav>
 
   <main>
     <section id="about" class="section">
       <div class="container">
-        <h2>Welcome to Wilson Lions PTA</h2>
-        <p>The Wilson Elementary PTA is dedicated to enriching the educational experience of every student at Wilson Elementary in Payson, Utah. We bring together parents, teachers, and community members to support our school and our children.</p>
-        <p>Join us in making a difference! Whether you volunteer your time, attend events, or become a PTA member, your involvement matters.</p>
+        <h2 data-i18n="about_heading">Welcome to Wilson Lions PTA</h2>
+        <p data-i18n="about_p1">The Wilson Elementary PTA is dedicated to enriching the educational experience of every student at Wilson Elementary in Payson, Utah. We bring together parents, teachers, and community members to support our school and our children.</p>
+        <p data-i18n="about_p2">Join us in making a difference! Whether you volunteer your time, attend events, or become a PTA member, your involvement matters.</p>
       </div>
     </section>
 
     <section id="membership" class="section alt">
       <div class="container">
-        <h2>Become a PTA Member</h2>
-        <p class="section-intro">Support our school by purchasing a PTA membership through our Givebacks store.</p>
-        <a href="https://www.givebacks.com/causes/wilsonlions/shop" target="_blank" class="btn btn-primary btn-large">Join the PTA</a>
+        <h2 data-i18n="membership_heading">Become a PTA Member</h2>
+        <p class="section-intro" data-i18n="membership_intro">Support our school by purchasing a PTA membership through our Givebacks store.</p>
+        <a href="https://www.givebacks.com/causes/wilsonlions/shop" target="_blank" class="btn btn-primary btn-large" data-i18n="membership_btn">Join the PTA</a>
       </div>
     </section>
 
     <section id="calendar" class="section">
       <div class="container">
-        <h2>School &amp; PTA Calendar</h2>
-        <p class="section-intro">Stay up to date with district-wide events and PTA activities.</p>
+        <h2 data-i18n="calendar_heading">School &amp; PTA Calendar</h2>
+        <p class="section-intro" data-i18n="calendar_intro">Stay up to date with district-wide events and PTA activities.</p>
         <div class="calendar-toggles">
           <label class="toggle-label">
             <input type="radio" name="calendar-select" value="pta" checked onchange="switchCalendar('pta')">
-            <span class="toggle-text">PTA Calendar</span>
+            <span class="toggle-text" data-i18n="calendar_pta">PTA Calendar</span>
           </label>
           <label class="toggle-label">
             <input type="radio" name="calendar-select" value="district" onchange="switchCalendar('district')">
-            <span class="toggle-text">District Calendar</span>
+            <span class="toggle-text" data-i18n="calendar_district">District Calendar</span>
           </label>
         </div>
         <div class="calendar-wrapper">
@@ -109,14 +81,14 @@
 
     <section id="signups" class="section alt">
       <div class="container">
-        <h2>Sign-Ups &amp; Volunteer Opportunities</h2>
-        <p class="section-intro">Share your information with us and we'll let you know about volunteer opportunities throughout the year!</p>
+        <h2 data-i18n="signups_heading">Sign-Ups &amp; Volunteer Opportunities</h2>
+        <p class="section-intro" data-i18n="signups_intro">Share your information with us and we'll let you know about volunteer opportunities throughout the year!</p>
         <div class="form-and-qr">
           <div class="form-embed">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf5hwPiPEdiR_RZBKxUZtTwy2t7C0LTeAu9U29HWwsZR0yA-g/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
           </div>
           <div class="qr-code">
-            <p><strong>Scan to fill out the form:</strong></p>
+            <p><strong data-i18n="signups_qr">Scan to fill out the form:</strong></p>
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://forms.gle/6fnWhHpmTzZsasLUA" alt="QR Code for PTA Information Form">
           </div>
         </div>
@@ -125,21 +97,21 @@
 
     <section id="officers" class="section">
       <div class="container">
-        <h2>PTA Officers</h2>
+        <h2 data-i18n="officers_heading">PTA Officers</h2>
         <div class="officers-grid">
           <div class="officer-card">
             <div class="officer-icon">&#128100;</div>
-            <h3>President</h3>
+            <h3 data-i18n="officer_president">President</h3>
             <p>Roxanne Arcia</p>
           </div>
           <div class="officer-card">
             <div class="officer-icon">&#128221;</div>
-            <h3>Secretary</h3>
+            <h3 data-i18n="officer_secretary">Secretary</h3>
             <p>Ana Valdez</p>
           </div>
           <div class="officer-card">
             <div class="officer-icon">&#128176;</div>
-            <h3>Treasurer</h3>
+            <h3 data-i18n="officer_treasurer">Treasurer</h3>
             <p>Courtney Morlant</p>
           </div>
         </div>
@@ -148,27 +120,27 @@
 
     <section id="contact" class="section alt">
       <div class="container">
-        <h2>Contact Us</h2>
+        <h2 data-i18n="contact_heading">Contact Us</h2>
         <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">&#9993;</div>
-            <h3>PTA Email</h3>
+            <h3 data-i18n="contact_email_title">PTA Email</h3>
             <a href="mailto:paysonlionspta@gmail.com">paysonlionspta@gmail.com</a>
           </div>
           <div class="contact-item">
             <div class="contact-icon">&#127968;</div>
-            <h3>School Address</h3>
+            <h3 data-i18n="contact_address_title">School Address</h3>
             <p>Wilson Elementary<br>590 West 500 South<br>Payson, UT 84651</p>
           </div>
           <div class="contact-item">
             <div class="contact-icon">&#128222;</div>
-            <h3>School Phone</h3>
+            <h3 data-i18n="contact_phone_title">School Phone</h3>
             <a href="tel:8014656060">(801) 465-6060</a>
           </div>
         </div>
         <div class="school-links">
-          <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank" class="btn btn-secondary">Wilson Elementary Website</a>
-          <a href="https://www.nebo.edu" target="_blank" class="btn btn-secondary">Nebo School District</a>
+          <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank" class="btn btn-secondary" data-i18n="contact_wilson">Wilson Elementary Website</a>
+          <a href="https://www.nebo.edu" target="_blank" class="btn btn-secondary" data-i18n="contact_nebo">Nebo School District</a>
         </div>
       </div>
     </section>
@@ -176,15 +148,106 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Wilson Lions PTA | Payson, Utah</p>
+      <p data-i18n="footer_copy">&copy; 2026 Wilson Lions PTA | Payson, Utah</p>
       <p class="footer-links">
-        <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank">Wilson Elementary</a> |
-        <a href="mailto:paysonlionspta@gmail.com">Contact Us</a>
+        <a href="https://www.wilson.nebo.edu/o/wilson" target="_blank" data-i18n="footer_wilson">Wilson Elementary</a> |
+        <a href="mailto:paysonlionspta@gmail.com" data-i18n="footer_contact">Contact Us</a>
       </p>
     </div>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        tagline: "Building Community. Supporting Students. Go Lions!",
+        nav_about: "About",
+        nav_membership: "Membership",
+        nav_calendar: "Calendar",
+        nav_signups: "Sign-Ups",
+        nav_officers: "Officers",
+        nav_contact: "Contact",
+        about_heading: "Welcome to Wilson Lions PTA",
+        about_p1: "The Wilson Elementary PTA is dedicated to enriching the educational experience of every student at Wilson Elementary in Payson, Utah. We bring together parents, teachers, and community members to support our school and our children.",
+        about_p2: "Join us in making a difference! Whether you volunteer your time, attend events, or become a PTA member, your involvement matters.",
+        membership_heading: "Become a PTA Member",
+        membership_intro: "Support our school by purchasing a PTA membership through our Givebacks store.",
+        membership_btn: "Join the PTA",
+        calendar_heading: "School & PTA Calendar",
+        calendar_intro: "Stay up to date with district-wide events and PTA activities.",
+        calendar_pta: "PTA Calendar",
+        calendar_district: "District Calendar",
+        signups_heading: "Sign-Ups & Volunteer Opportunities",
+        signups_intro: "Share your information with us and we'll let you know about volunteer opportunities throughout the year!",
+        signups_qr: "Scan to fill out the form:",
+        officers_heading: "PTA Officers",
+        officer_president: "President",
+        officer_secretary: "Secretary",
+        officer_treasurer: "Treasurer",
+        contact_heading: "Contact Us",
+        contact_email_title: "PTA Email",
+        contact_address_title: "School Address",
+        contact_phone_title: "School Phone",
+        contact_wilson: "Wilson Elementary Website",
+        contact_nebo: "Nebo School District",
+        footer_copy: "\u00a9 2026 Wilson Lions PTA | Payson, Utah",
+        footer_wilson: "Wilson Elementary",
+        footer_contact: "Contact Us",
+        btn_translate: "Traducir al Espa\u00f1ol"
+      },
+      es: {
+        tagline: "Construyendo Comunidad. Apoyando a los Estudiantes. \u00a1Vamos Leones!",
+        nav_about: "Acerca de",
+        nav_membership: "Membres\u00eda",
+        nav_calendar: "Calendario",
+        nav_signups: "Inscripciones",
+        nav_officers: "Oficiales",
+        nav_contact: "Contacto",
+        about_heading: "Bienvenidos a la PTA de Wilson Lions",
+        about_p1: "La PTA de Wilson Elementary se dedica a enriquecer la experiencia educativa de cada estudiante en Wilson Elementary en Payson, Utah. Reunimos a padres, maestros y miembros de la comunidad para apoyar a nuestra escuela y a nuestros hijos.",
+        about_p2: "\u00a1\u00a1Acomp\u00e1\u00f1anos para hacer la diferencia! Ya sea que ofrezcas tu tiempo como voluntario, asistas a eventos o te conviertas en miembro de la PTA, tu participaci\u00f3n es importante.",
+        membership_heading: "Convi\u00e9rtete en Miembro de la PTA",
+        membership_intro: "Apoya nuestra escuela comprando una membres\u00eda de la PTA en nuestra tienda Givebacks.",
+        membership_btn: "Unirse a la PTA",
+        calendar_heading: "Calendario Escolar y de la PTA",
+        calendar_intro: "Mantente al d\u00eda con eventos del distrito y actividades de la PTA.",
+        calendar_pta: "Calendario de la PTA",
+        calendar_district: "Calendario del Distrito",
+        signups_heading: "Inscripciones y Oportunidades de Voluntariado",
+        signups_intro: "\u00a1Comparte tu informaci\u00f3n con nosotros y te informaremos sobre oportunidades de voluntariado durante el a\u00f1o!",
+        signups_qr: "Escanea para llenar el formulario:",
+        officers_heading: "Oficiales de la PTA",
+        officer_president: "Presidente",
+        officer_secretary: "Secretaria",
+        officer_treasurer: "Tesorera",
+        contact_heading: "Cont\u00e1ctanos",
+        contact_email_title: "Correo de la PTA",
+        contact_address_title: "Direcci\u00f3n de la Escuela",
+        contact_phone_title: "Tel\u00e9fono de la Escuela",
+        contact_wilson: "Sitio Web de Wilson Elementary",
+        contact_nebo: "Distrito Escolar de Nebo",
+        footer_copy: "\u00a9 2026 Wilson Lions PTA | Payson, Utah",
+        footer_wilson: "Wilson Elementary",
+        footer_contact: "Cont\u00e1ctanos",
+        btn_translate: "Translate to English"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      applyTranslations();
+    }
+
+    function applyTranslations() {
+      const t = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+      document.getElementById('translate-btn').textContent = t.btn_translate;
+    }
+
     function switchCalendar(type) {
       document.getElementById('calendar-pta').style.display = type === 'pta' ? 'block' : 'none';
       document.getElementById('calendar-district').style.display = type === 'district' ? 'block' : 'none';
@@ -197,7 +260,6 @@
       hamburger.classList.toggle('open');
     }
 
-    // Close menu when a link is clicked
     document.querySelectorAll('#nav-menu a').forEach(link => {
       link.addEventListener('click', () => {
         document.getElementById('nav-menu').classList.remove('open');
@@ -205,26 +267,28 @@
       });
     });
 
-    // Highlight active nav link based on scroll position
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar a');
     const contactLink = document.querySelector('.navbar a[href="#contact"]');
     const sectionIndicator = document.getElementById('section-indicator');
 
-    const sectionNames = {
-      about: 'About',
-      membership: 'Membership',
-      calendar: 'Calendar',
-      signups: 'Sign-Ups',
-      officers: 'Officers',
-      contact: 'Contact'
-    };
+    function getSectionNames() {
+      const t = translations[currentLang];
+      return {
+        about: t.nav_about,
+        membership: t.nav_membership,
+        calendar: t.nav_calendar,
+        signups: t.nav_signups,
+        officers: t.nav_officers,
+        contact: t.nav_contact
+      };
+    }
 
     function highlightNav() {
       const scrollPos = window.scrollY + 100;
       const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 100);
+      const sectionNames = getSectionNames();
 
-      // If near the bottom, highlight contact
       if (isAtBottom) {
         navLinks.forEach(link => link.classList.remove('active'));
         contactLink.classList.add('active');
