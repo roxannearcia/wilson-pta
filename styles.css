@@ -393,6 +393,13 @@ body {
   flex: 1;
 }
 
+.translate-wrapper {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+}
+
 .translate-btn {
   background: var(--green-main);
   color: white;
@@ -442,14 +449,7 @@ footer p {
     left: 15px;
   }
 
-.translate-wrapper {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1001;
-}
-
-.translate-btn {
+  .translate-btn {
     padding: 8px 14px;
     font-size: 0.75rem;
   }
